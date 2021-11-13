@@ -64,7 +64,7 @@ export const PostsRight = () => {
                   alt="ProfilePic"
                 />
                 <div>
-                  <b>Sabareesh Subramanian</b> is with <b>Masai School</b> and{" "}
+                  <b>Piyush Ranjan</b> is with <b>Masai School</b> and{" "}
                   <b>
                     <u>3 others</u>
                   </b>

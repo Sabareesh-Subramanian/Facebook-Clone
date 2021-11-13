@@ -19,7 +19,7 @@ import HelpIcon from "@material-ui/icons/Help";
 import SettingsIcon from "@material-ui/icons/Settings";
 import NightsStayIcon from "@material-ui/icons/NightsStay";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-
+import { useStateValue } from "../Context/StateProvider";
 import "../StyleModules/Header.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import { useState } from "react";
@@ -61,6 +61,8 @@ const StyledMenuItem = withStyles((theme) => ({
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
+  console.log("user in header:", user);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -100,9 +102,19 @@ const Header = () => {
         </div>
       </div>
       <div className="header__right">
-        <div className="header__info">
-          <Avatar src="https://media-exp1.licdn.com/dms/image/C5603AQGgtVhNNVr5yg/profile-displayphoto-shrink_100_100/0/1633080376415?e=1639612800&v=beta&t=Z2d7kNBuRgUlA8oJxosGfSbdAowunMWrDnt3Sq5Lavg" />
-          <h5>Niket Nayan</h5>
+        <div
+          onClick={() => {
+            window.location.href = "/profile";
+          }}
+          className="header__info"
+        >
+          <Avatar
+            src={
+              "https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png" ||
+              user.photoURL
+            }
+          />
+          <h5>{"Piyush Ranjan" || user.displayName}</h5>
         </div>
         <IconButton>
           <AppsIcon />

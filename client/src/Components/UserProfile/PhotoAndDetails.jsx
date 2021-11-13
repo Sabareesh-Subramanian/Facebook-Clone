@@ -49,7 +49,7 @@ export const PhotoAndDetails = () => {
         <img
           className="img-fluid offset-2 col-8 rounded"
           style={{ height: "350px", objectFit: "cover", zIndex: "0" }}
-          src="https://scontent.fmaa2-3.fna.fbcdn.net/v/t1.6435-9/p960x960/30261725_1637903472972929_1457691198520033280_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=TWkAN2FFmYMAX_KKs4y&_nc_ht=scontent.fmaa2-3.fna&oh=6bb1bc7510deb76c9355ceb844792d7a&oe=61AF327A"
+          src="https://media-exp1.licdn.com/dms/image/C5616AQGqVbWQ_cYZ1g/profile-displaybackgroundimage-shrink_350_1400/0/1624588252195?e=1642032000&v=beta&t=2EG0lkbZmd0CFrmHtHlBdPZJU_Kj6AGDyg78YFeaVa0"
           alt="CoverPic"
         />
 
@@ -65,12 +65,12 @@ export const PhotoAndDetails = () => {
             <img
               style={{ height: "200px", objectFit: "cover" }}
               className="rounded-circle "
-              src="https://scontent.fmaa2-3.fna.fbcdn.net/v/t1.6435-1/c0.0.320.320a/p320x320/30127381_1637900336306576_3447710002440044544_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=7206a8&_nc_ohc=6Y18-FXio-MAX9gT-vZ&_nc_oc=AQm29w5DsxsOdQ1fQnqwH9NsbKIW5UIXP9VRInHdvyF5DproYLV7g7w3U75KhhHLsLUnwbkCcMsF9qdgqdjCNlCw&_nc_ht=scontent.fmaa2-3.fna&oh=13f25b2aad908d6116f19c2f804de180&oe=61B0DB37"
+              src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png"
               alt="ProfilePic"
             />
           </div>
           <div className="col-6 ps-2">
-            <div className="h4 text-light mt-4">Sabareesh Subramanian</div>
+            <div className="h4 text-light mt-4">Piyush Ranjan</div>
             <p>1.1K Friends</p>
             <div className="d-flex justify-content-between">
               <AvatarGroup max={5}>
@@ -92,9 +92,15 @@ export const PhotoAndDetails = () => {
                 <Avatar alt="Trevor Henderson" src={avatar} />
               </AvatarGroup>
               <div>
-                <button type="button" class=" btn btn-sm btn-primary">
-                  <img src={plus} alt="PlusSign" />
-                  <span> Add To Your Story</span>
+                <button
+                  onClick={() => {
+                    window.location.href = "/stories";
+                  }}
+                  type="button"
+                  class=" btn btn-sm btn-primary"
+                >
+                  {/* <img src={plus} alt="PlusSign" /> */}
+                  <span> View Stories</span>
                 </button>
                 <button type="button" class="ms-2 btn btn-sm btn-secondary">
                   <img src={edit} alt="PlusSign" />
