@@ -62,4 +62,22 @@ This repository holds the clone of Facebook.com, a popular social media applicat
 
 ## A quick Glimpse of our Work
 
+### Login Page:
+
+![image](https://user-images.githubusercontent.com/86410079/141643999-1d16440e-4092-4faf-bc15-d6583bf2b72e.png)
+
+### Signup Modal:
+
+![image](https://user-images.githubusercontent.com/86410079/141644019-d090ab0d-45bb-4b17-9156-a600f17444a7.png)
+
+### User Profile Page:
+
+![image](https://user-images.githubusercontent.com/86410079/141644054-6d3eba38-c4d5-4506-80d2-c0fd22b25553.png)
+
+![image](https://user-images.githubusercontent.com/86410079/141644258-214cf3a1-dc7f-4548-b4ef-7a788d9044d3.png)
+
+### Stories Page:
+
+![image](https://user-images.githubusercontent.com/86410079/141644296-b1ec91c4-0b0d-4a68-8a21-999d554bfb26.png)
+
 
