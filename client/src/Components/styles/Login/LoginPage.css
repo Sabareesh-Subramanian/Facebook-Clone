@@ -1,0 +1,299 @@
+.loginPageContainer {
+  background-color: #edeff1;
+  padding: 35px;
+  height: 95vh;
+}
+/*Left Div CSS*/
+.leftLoginContainer {
+  text-align: left;
+  position: relative;
+  bottom: 50px;
+}
+.leftLoginContainer > img {
+  max-width: 300px;
+  position: relative;
+  right: 30px;
+}
+.leftLoginContainer > p {
+  font-size: 24px;
+  font-weight: 400;
+  max-width: 520px;
+}
+/*Form Div CSS*/
+.loginFormMainDiv {
+  background-color: #fff;
+  width: 405px;
+  height: auto;
+  padding: 8px 8px 8px 8px;
+  margin: 50px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px 2px  rgba(224, 224, 224, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+.loginFormMainDiv > input {
+  margin: 5px;
+  padding: 20px 15px;
+  border-radius: 8px;
+  border: 1px solid #e4e6eb;
+  background-color:  #edeff1;
+}
+.loginFormMainDiv > input:focus {
+  border: 1px solid rgb(0, 140, 255);
+  border-radius: 8px;
+}
+.loginFormMainDiv > button {
+  background-color:  #1877f2;
+  color: var(--white);
+  margin: 8px 5px;
+  padding: 3%;
+  font-weight: 600;
+  font-size: 19px;
+  border: 1px solid  #1877f2;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 45px;
+}
+.loginFormMainDiv > button:hover {
+  background-color: #146fe7;
+  border: 1px solid #146fe7;
+}
+.loginFormMainDiv > button:nth-last-child(1):hover {
+  background-color:#32af19;
+}
+.loginFormMainDiv > button:nth-last-child(1) {
+  background-color: #42b72a;
+  color: var(--white);
+  margin: 10px 80px;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 13px 0;
+  border: 2px solid #42b72a;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.loginFormMainDiv > a {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 400;
+  color: #1877f2;
+}
+.loginFormMainDiv > a:hover {
+  text-decoration: underline;
+}
+.loginFormMainDiv>input::placeholder{
+  color:lightslategray
+}
+.forpass{
+  color: #1877f2;
+    font-size: 14px;
+    font-weight: 500;
+}
+.forpass:hover{
+  text-decoration: underline;
+}
+.hrLoginForm {
+  margin: 10px;
+}
+
+/*footer*/
+.LoginPageFooter {
+  display: flex;
+  font-size: 10px;
+  font-weight: 100;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color:  #fff;
+  padding: 5px;
+}
+.LoginPageFooter > p {
+  margin: auto;
+}
+/*signup div*/
+.signUpContainer {
+  max-width: 432px;
+  min-width: 350px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0px 0 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-bottom: 15px;
+}
+.signUpContainer > .signUpH2 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  padding: 3px;
+  padding-top: 10px;
+  margin-left: 22px;
+  margin-top: 10px;
+}
+.signUpContainer > .signUpP {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  padding: 3px;
+  margin-left: 22px;
+}
+.signUpContainer > .signUpHr {
+  margin-top: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.signUpContainer > .signUpbuttonClose {
+  position: relative;
+  bottom: 77px;
+  left: 390px;
+  background-color: transparent;
+  border: transparent;
+}
+.signUpbuttonClose:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  height: 26px;
+}
+.nameSignUpContainer{
+  margin-left: 15px;
+}
+.signUpContainer > .nameSignUpContainer > input {
+  width: 44.5%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color:#f5f6f7;
+  margin: 2px;
+}
+.signUpContainer > .nameSignUpContainer > input::placeholder {
+  font-size: 14px;
+  color:lightslategray
+}
+.signUpContainer > .numPassInput {
+  width: 90%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f5f6f7;
+  margin-left: 15px;
+  margin-top:5px
+}
+.signUpContainer > .numPassInput::placeholder{
+  font-size: 14px;
+  color:lightslategray
+}
+.signUpContainer > .signUpbuttonClose > svg {
+  stroke:  #b0b3b8;
+}
+.dobSignUpContainer{
+  margin-left: 15px;
+}
+.signUpContainer > .dobSignUpContainer > select {
+  width: 29%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f5f6f7;
+  margin: 2px;
+  margin-right:10px
+}
+.signUpContainer > .dobSignUpContainer > p {
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+  padding: 3px;
+  margin-left: 1px;
+  margin-top: 15px;
+}
+.signUpContainer > .dobSignUpContainer > div {
+  padding: 12px;
+  padding-bottom: 8px;
+  width: 120px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f5f6f7;
+}
+.signUpContainer > .dobSignUpContainer > div > p {
+  position: relative;
+  bottom: 4px;
+  left: 4px;
+}
+
+.signUpButton {
+  background-color: #42b72a;
+  color: white;
+  margin: 15px 120px;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 8px 0;
+  border: 2px solid #42b72a;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 180px;
+  height: 45px;
+}
+.signUpButton:hover {
+  background-color: #32af19;
+}
+.genderPtag {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  padding: 3px;
+  margin-left: 15px;
+  margin-top: 7px;
+}
+.signUpModel {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(7, 7, 7, 0.8);
+  z-index: 5;
+}
+.termsSignUpContainer {
+  font-size: 11px;
+  font-weight: 200;
+  text-align: left;
+  color:#050505;
+  margin: 6px 30px;
+}
+.errorHandlingContainerSignUp {
+  width: 90%;
+  min-height: 0;
+  margin: 0 auto 10px;
+  padding: 3px;
+}
+.errorHandlingContainerSignUp > p {
+  font-size: 14px;
+  color: rgb(235, 83, 63);
+}
+/*Media Queries*/
+@media only screen and (max-width: 900px) {
+  .loginPageContainer {
+    flex-direction: column;
+  }
+  .leftLoginContainer {
+    bottom: 0;
+    text-align: center;
+  }
+}
+
+/* error message */
+.errorMessageContainer {
+  padding: 1px 0;
+  width: 380px;
+  margin: 5px auto;
+}
+.errorMessageContainer p {
+  font-size: 13px;
+  color: rgb(235, 83, 63);
+}

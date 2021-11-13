@@ -1,3 +1,14 @@
+
+.App {
+  text-align: center;
+}
+.flexBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

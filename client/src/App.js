@@ -1,5 +1,7 @@
 
 import './App.css';
+
+import LoginPage from './Components/Login/LoginPage';
 import { AllRoutes } from './Routes/Routes';
 
 function App() {
@@ -14,12 +16,16 @@ function App() {
   return (
     <div>
       <Switch>
+    <Route path="/" exact>
+    <LoginPage/>
+    </Route>
         <Route path="/profile">
           <UserProfile />
         </Route>
       </Switch>
 
     </div>
+
   );
 }
 
