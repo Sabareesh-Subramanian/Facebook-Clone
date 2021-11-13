@@ -1,11 +1,15 @@
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import ShowStory from './ShowStory';
 import styles from "../../StyleModules/StoryPage.module.css";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import db from "../../firebase"
+import firebase from "firebase/compat/app";
+
 const StoryPage = () => {
     const [active, setActive] = useState(false);
     const [img, setImage] = useState(null);
+    const [data, setData] = useState([]);
     const [profileImg, setProfileImg] = useState("");
     const toggleState = () => {
         active ? setActive(!active) : setActive(active);
@@ -15,10 +19,24 @@ const StoryPage = () => {
         setProfileImg(img2);
         setActive(true);
     }
+    const getStory = async () => {
+        db.collection("story").onSnapshot((snapshot) => {
+            console.log("snap: ", snapshot);
+            //snapshot.docs.map((doc) => (console.log("doc: ",doc.data().image)))
+           setData(snapshot.docs.map((doc) => (doc.data())))
+        });
+        
+    }
+    useEffect((()=>{
+        getStory();
+        // console.log("data",data)
+    }),[])
     return (
+        
         <div className={styles.container}>
             {/* left div */}
             <div className={styles.leftDiv} id="left-div-1">
+                {console.log("data4:",data)}
                 <div>
                     <div className={styles.leftHeading}>
                         <div>
@@ -71,11 +89,13 @@ const StoryPage = () => {
                         </div>
                     </div>
                     <div className={styles.storyContainer}>
-                        <div className={styles.parent} onClick={()=> handleClick("https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1636630403~hmac=88ef45a182757eb6c6c9452ca51b81d0")}>
-                            <img className={styles.image1} src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="logo" onClick={handleClick}/>
+                        {data.map((item) => {
+                            return <div className={styles.parent} onClick={()=> handleClick(`${item.image}`, "https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1636630403~hmac=88ef45a182757eb6c6c9452ca51b81d0")}>
+                            <img className={styles.image1} src={item.image} alt="logo" onClick={handleClick}/>
                             <img className={styles.image2} src="https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1636630403~hmac=88ef45a182757eb6c6c9452ca51b81d0" alt="status" />
                         </div>
-                        <div className={styles.parent} onClick={()=> handleClick("https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg","https://cdn-icons.flaticon.com/png/512/706/premium/706807.png?token=exp=1636630403~hmac=cdd6b035b7eb243067119abbb60014f2")}>
+                        })}
+                        {/* <div className={styles.parent} onClick={()=> handleClick("https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg","https://cdn-icons.flaticon.com/png/512/706/premium/706807.png?token=exp=1636630403~hmac=cdd6b035b7eb243067119abbb60014f2")}>
                             <img className={styles.image1} src="https://www.gettyimages.com/gi-resources/images/500px/983794168.jpg" alt="logo"/>
                             <img className={styles.image2} src="https://cdn-icons.flaticon.com/png/512/706/premium/706807.png?token=exp=1636630403~hmac=cdd6b035b7eb243067119abbb60014f2" alt="status" />
                         </div>
@@ -110,7 +130,7 @@ const StoryPage = () => {
                         <div className={styles.parent} onClick={()=>handleClick("https://lh3.googleusercontent.com/proxy/DTLwODJpDpo1YdnprDhABlcqf4hRn9eSWj9naQHxpDz4BA4BqdM8YIH_A5W0WLnVAR3vJEjdRUxUID7_7DVAGuwg2VgahPt8C8-3QJwYCsNH6djwmiuLMPZGf3j59uLEFr8sgo_2zMx94h0NdWne2einKg","https://cdn-icons.flaticon.com/png/512/3146/premium/3146501.png?token=exp=1636631362~hmac=1e730820b10a1241735db45c2233a254")}>
                             <img className={styles.image1} src="https://lh3.googleusercontent.com/proxy/DTLwODJpDpo1YdnprDhABlcqf4hRn9eSWj9naQHxpDz4BA4BqdM8YIH_A5W0WLnVAR3vJEjdRUxUID7_7DVAGuwg2VgahPt8C8-3QJwYCsNH6djwmiuLMPZGf3j59uLEFr8sgo_2zMx94h0NdWne2einKg" alt="logo"/>
                             <img className={styles.image2} src="https://cdn-icons.flaticon.com/png/512/3146/premium/3146501.png?token=exp=1636631362~hmac=1e730820b10a1241735db45c2233a254" alt="profile" />
-                        </div>
+                        </div> */}
                     </div>
                     {active && <ShowStory img={img} profileImg={profileImg} toggleState={toggleState}/>}
                 </div>

@@ -10,9 +10,10 @@ function Feed() {
 
 
     useEffect(() => {
-        db.collection("posts").orderBy("timestamp", "desc").onSnapshot((snapshot) => (
+        db.collection("posts").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
+            snapshot.docs.map((doc) => (console.log(doc)));
             setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
-        ));
+        });
     }, []);
     return (
         <div className="feed">

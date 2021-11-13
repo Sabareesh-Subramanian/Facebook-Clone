@@ -21,7 +21,7 @@ import Widgets from './Widgets';
 function Header() {
     const [{ user }, dispatch] = useStateValue();
     return (
-        <Link to="/">
+        <Link to="/" style={{textDecoration:"none", color:"black"}}>
         <div className="header">
             <div className="header_left">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="" />
