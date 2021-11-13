@@ -6,6 +6,7 @@ import Widgets from './Components/Widgets';
 import Login from './Components/Login';
 import "./App.css"
 import { useStateValue } from './Context/StateProvider';
+import { AllRoutes } from './Routes/Routes';
 
 
 
@@ -13,7 +14,7 @@ function App() {
   const [{ user }, dispatch] = useStateValue();
   return (
     <>
-      <div className="app">
+      {/* <div className="app">
         {!user ? (<Login/>) : (
           <>
            <Header />
@@ -26,7 +27,8 @@ function App() {
           
         )}
        
-      </div>
+      </div> */}
+      <AllRoutes/>
       
       </>
     

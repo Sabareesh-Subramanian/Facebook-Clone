@@ -25,9 +25,6 @@ function MessageSender() {
             ProfilePic: user.photoURL,
             username:user.displayName,
             image:imageUrl
-            
-
-        
         })
 
         setInput("");

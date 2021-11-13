@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 import "./styles/Header.css"
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home'
@@ -13,9 +14,14 @@ import ForumIcon from "@material-ui/icons/Forum";
 import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import { useStateValue } from '../Context/StateProvider';
+import "../App.css"
+import Sidebar from './Sidebar';
+import Feed from './Feed';
+import Widgets from './Widgets';
 function Header() {
     const [{ user }, dispatch] = useStateValue();
     return (
+        <Link to="/">
         <div className="header">
             <div className="header_left">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="" />
@@ -62,7 +68,13 @@ function Header() {
 
 
             </div>
-        </div>
+            </div>
+        <div className="app_body">
+            <Sidebar />
+          <Feed />
+          <Widgets/>
+            </div>
+        </Link>
     )
 }
 

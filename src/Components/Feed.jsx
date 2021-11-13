@@ -10,7 +10,7 @@ function Feed() {
 
 
     useEffect(() => {
-        db.collection("posts").orderBy("timestamp","desc").onSnapshot((snapshot) => (
+        db.collection("posts").orderBy("timestamp", "desc").onSnapshot((snapshot) => (
             setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
         ));
     }, []);
@@ -18,7 +18,7 @@ function Feed() {
         <div className="feed">
             <StoryReel />
             <MessageSender />
-           {console.log(posts)}
+           {console.log("posts: ",posts)}
             {posts.map((post) => (
                
                 
