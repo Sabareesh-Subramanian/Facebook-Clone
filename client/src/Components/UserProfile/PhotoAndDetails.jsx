@@ -94,7 +94,7 @@ export const PhotoAndDetails = () => {
               <div>
                 <button type="button" class=" btn btn-sm btn-primary">
                   <img src={plus} alt="PlusSign" />
-                  <span> Add To Story</span>
+                  <span> Add To Your Story</span>
                 </button>
                 <button type="button" class="ms-2 btn btn-sm btn-secondary">
                   <img src={edit} alt="PlusSign" />
