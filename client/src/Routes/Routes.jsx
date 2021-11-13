@@ -6,12 +6,19 @@ import { UserProfile } from "../Components/UserProfile/UserProfile";
 
 const AllRoutes = () => {
   return (
-    <Routes>
+  <>
+      
+    {!user ?<Routes><Route exact path="/" element={<Login />}>
+            </Route></Routes> :
+                <Routes>
+            <Route exact path="/" element={<Header/>}>
+                </Route>
       <Route exact path="/" element={<LoginPage />}></Route>
       <Route exact path="/stories" element={<StoryPage />}></Route>
       <Route exact path="/profile" element={<UserProfile />}></Route>
       <Route path="/create" element={<CreateStory />}></Route>
-    </Routes>
+        </Routes>
+      </>
   );
 };
 export { AllRoutes };
