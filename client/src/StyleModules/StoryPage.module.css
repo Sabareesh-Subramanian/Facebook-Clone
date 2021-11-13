@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  margin: 0;
+  padding: 0;
+}
+.leftDiv {
+  background-color: #242526;
+  height: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.rightDiv {
+  color: white;
+  background-color: #18191a;
+  margin: 0;
+  padding: 0;
+}
+.leftHeading {
+  display: flex;
+  gap: 25%;
+  color: white;
+}
+.leftHeading > div:last-child {
+  margin-top: 7%;
+}
+.leftHeading > div:last-child > a {
+  margin: 20px;
+}
+.leftHeading > div:first-child {
+  margin-left: 15px;
+}
+.leftHeading > div > a {
+  text-decoration: none;
+  color: #2e89ff;
+}
+.setting {
+  margin: 5% 0 0 0 !important;
+  margin-left: 20% !important;
+}
+.Color,
+.addStory {
+  background-color: #252f3c;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+}
+.addStory {
+  background-color: #242526 !important;
+  padding: 10px;
+}
+.addStory:hover {
+  background-color: rgb(68, 68, 68) !important;
+}
+.addStory > div > h4 {
+  padding: 10px;
+  padding-left: 0;
+  margin: 0;
+}
+.Color h3 {
+  margin-top: 15%;
+  padding: 0;
+}
+.Image > img {
+  height: 40px;
+}
+.storiesContainer {
+  padding: 10%;
+  padding-top: 20px;
+}
+.rightHeading {
+  display: flex;
+  gap: 30%;
+}
+.rightHeading > div:first-child > h4 {
+  padding: 0;
+  margin: 0;
+}
+.rightHeading > div:first-child > p {
+  margin: 0;
+  padding: 0;
+}
+.rightHeading > div:last-child > a {
+  text-decoration: none;
+  color: #2e89ff;
+}
+.parent {
+  position: relative;
+  top: 30px;
+  left: 0;
+  float: left;
+  margin: 40px 60px 40px 0;
+}
+.image1 {
+  position: relative;
+  top: 0px;
+  left: 0;
+  border-radius: 5px;
+  height: 272px;
+  width: 153px;
+}
+.image2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+.story {
+  color: white;
+  margin-left: 2%;
+  font-size: 10px;
+}
+.backToStatus {
+  padding: 10px;
+}
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  gap: 20px;
+}
+.firstCard {
+  text-align: center;
+  color: white !important;
+  background-image: url(https://www.facebook.com/rsrc.php/v3/y_/r/OOIYgLUa58d.png);
+  background-position: 0px 0px;
+  background-size: 271px 717px;
+  width: 220px;
+  height: 330px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  border-radius: 10px !important;
+}
+.secondCard {
+  text-align: center;
+  color: white !important;
+  background-image: url(https://www.facebook.com/rsrc.php/v3/y_/r/OOIYgLUa58d.png);
+  background-position: 0px -331px;
+  background-size: 221px 687px;
+  width: 220px;
+  height: 330px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  border-radius: 10px !important;
+}
+.uploadFile {
+  background-color: #242526;
+  width: 10%;
+  padding: 10px;
+  border-radius: 50%;
+  margin-top: 60%;
+  margin-left: 40%;
+}
+.uploadtext {
+  font-weight: bold;
+  padding: 5px;
+  font-size: 15px;
+}
+@media screen and (max-width: 1380px) {
+  .leftHeading {
+    display: flex;
+    flex-direction: column;
+    gap: 25%;
+    color: white;
+  }
+}
+@media screen and (max-width: 700px) {
+  .leftDiv {
+    display: none;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
