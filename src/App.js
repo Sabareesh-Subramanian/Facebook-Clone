@@ -3,16 +3,18 @@ import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import Feed from './Components/Feed';
 import Widgets from './Components/Widgets';
+import Login from './Components/Login';
 import "./App.css"
+import { useStateValue } from './Context/StateProvider';
 
 
 
 function App() {
-  const user="piyush"
+  const [{ user }, dispatch] = useStateValue();
   return (
     <>
       <div className="app">
-        {!user ? (<h1>Login</h1>) : (
+        {!user ? (<Login/>) : (
           <>
            <Header />
       <div className="app_body">
