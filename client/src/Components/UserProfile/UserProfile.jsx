@@ -1,11 +1,12 @@
 import { PostsFriendsPhotos } from "./PostsFriendsPhotos";
 import { PhotoAndDetails } from "./PhotoAndDetails";
+import { Header } from "../Header";
 
 export const UserProfile = () => {
   return (
     <>
       {/* Navbar Start */}
-      <div
+      {/* <div
         style={{
           zIndex: "1",
           position: "fixed",
@@ -16,7 +17,8 @@ export const UserProfile = () => {
         }}
       >
         Navbar
-      </div>
+      </div> */}
+      <Header />
       {/* Navbar End */}
       {/* Photo and Info Start */}
       <PhotoAndDetails />

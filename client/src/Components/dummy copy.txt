@@ -1,1 +1,0 @@
-// This is a plain text file, created to include the folder in git commits.

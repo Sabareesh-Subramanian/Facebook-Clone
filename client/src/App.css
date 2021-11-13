@@ -1,13 +1,14 @@
-
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
-.flexBox{
+.flexBox {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .App-logo {
   height: 40vmin;
