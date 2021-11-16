@@ -12,7 +12,7 @@ import ExpandMoreOutlined from "@material-ui/icons/ExpandMoreOutlined"
 function Sidebar() {
     return <div className="sidebar">
         
-        <SidebarRow src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png" title="Piyush Ranjan"/>
+        <SidebarRow src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png" title="Biswajit Das"/>
         <SidebarRow Icon={LocalHospitalIcon} title="Covid-19 Information Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
         <SidebarRow Icon={PeopleIcon} title="Friends" />

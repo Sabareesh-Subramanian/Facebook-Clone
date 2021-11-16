@@ -11,11 +11,11 @@ import firebase from "firebase/compat/app";
 function MessageSender() {
     const [input, setInput] = useState("");
     const [imageUrl, setImageUrl] = useState("");
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user }] = useStateValue();
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        db.collection("posts").add({
+        db.collection("users").doc(`${user.uid}`).collection("messages").add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             ProfilePic: user.photoURL,
@@ -28,7 +28,7 @@ function MessageSender() {
    }
 
     return (
-        <div className="messageSender">
+        <div className="messageSender" style={{ width:"60%", marginTop:"-280px"}}>
             <div className="messageSender_top">
                 <Avatar src={user.photoURL} />
                 <form >

@@ -65,12 +65,12 @@ export const PhotoAndDetails = () => {
             <img
               style={{ height: "200px", objectFit: "cover" }}
               className="rounded-circle "
-              src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png"
+              src="https://github.com/biswajitdas-007/biswajitdas-007/blob/main/DSC_0121-modified-min%20(1).png?raw=true"
               alt="ProfilePic"
             />
           </div>
           <div className="col-6 ps-2">
-            <div className="h4 text-light mt-4">Piyush Ranjan</div>
+            <div className="h4 text-light mt-4">Biswajit Das</div>
             <p>1.1K Friends</p>
             <div className="d-flex justify-content-between">
               <AvatarGroup max={5}>

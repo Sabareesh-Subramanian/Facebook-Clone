@@ -1,9 +1,10 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
 import { useStateValue } from '../../Context/StateProvider'
-import "../styles/SidebarRow.css"
+import "../styles/SidebarRow.css";
+
 function SidebarRow({ src, Icon, title }) {
-    const [{user},dispatch]=useStateValue()
+    const [{ user }] = useStateValue();
     return (
         <div className="sidebarRow">
             {src && <Avatar src={user.photoURL} />}

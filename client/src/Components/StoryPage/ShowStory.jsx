@@ -1,7 +1,5 @@
 import styles from "../../StyleModules/ShowStory.module.css";
 export default function ShowStory({ img,profileImg, toggleState }) {
-    console.log(img)
-    
     return (
         <div className={styles.trailer}>
             <div>

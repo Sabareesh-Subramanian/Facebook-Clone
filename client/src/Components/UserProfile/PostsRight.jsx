@@ -60,11 +60,11 @@ export const PostsRight = () => {
               <div className="d-flex justify-content-between">
                 <img
                   className="col-1 rounded-circle me-3"
-                  src="https://scontent.fmaa2-3.fna.fbcdn.net/v/t1.6435-1/c0.0.320.320a/p320x320/30127381_1637900336306576_3447710002440044544_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=7206a8&_nc_ohc=6Y18-FXio-MAX9gT-vZ&_nc_oc=AQm29w5DsxsOdQ1fQnqwH9NsbKIW5UIXP9VRInHdvyF5DproYLV7g7w3U75KhhHLsLUnwbkCcMsF9qdgqdjCNlCw&_nc_ht=scontent.fmaa2-3.fna&oh=13f25b2aad908d6116f19c2f804de180&oe=61B0DB37"
+                  src="https://github.com/biswajitdas-007/biswajitdas-007/blob/main/DSC_0121-modified-min%20(1).png?raw=true"
                   alt="ProfilePic"
                 />
                 <div>
-                  <b>Piyush Ranjan</b> is with <b>Masai School</b> and{" "}
+                  <b>Biswajit Das</b> is with <b>Masai School</b> and{" "}
                   <b>
                     <u>3 others</u>
                   </b>

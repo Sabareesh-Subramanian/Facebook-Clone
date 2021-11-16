@@ -4,19 +4,12 @@ import "../styles/Login/LoginPage.css";
 import LoginLogo from "./LoginLogo";
 import LoginForm from "./LoginForm";
 import { ReactComponent as CloseIcon } from "../../Icons/close.svg";
-// import { login, resetPassword, signup } from '../../Firebase/authentication';
-// import { database } from '../../Firebase/firebase';
 import { useDispatch, useSelector } from "react-redux";
 import {
-  loginFailure,
   loginRequest,
-  loginSuccess,
-  signUpFailure,
   signupRequest,
-  signupSuccess,
 } from "../../Redux/Auth/actions";
 import { WaveLoading } from "react-loadingg";
-import useVisibility from "../../Hooks/useVisibility";
 import ResetPassword from "./ResetPassword";
 
 const initFormSignup = {
@@ -34,9 +27,9 @@ function LoginPage() {
   const [isCreateClick, setIsCreateClick] = useState(false);
   const [signUpForm, setSignUpForm] = useState(initFormSignup);
   const [logInForm, setLogInForm] = useState(initFormLogin);
-  const [loginErrorMessage, setLoginErrorMessage] = useState("");
+  const [loginErrorMessage] = useState("");
   const { first_name, last_name, email, password } = signUpForm;
-  const [dob, setDob] = useState("1, June, 1950");
+  const [dob,setDob] = useState("1, June, 1950");
   const [day, setDay] = useState("1");
   const [mon, setMon] = useState("June");
   const [year, setYear] = useState("1950");
@@ -76,37 +69,10 @@ function LoginPage() {
 
   const handleSingUp = () => {
     dispatch(signupRequest());
-    // signup(email,password)
-    // .then(res=>{
-    //    const {uid} = res.user
-    //    let payload = {uid,...signUpForm,dob,accessibility:true}
-    //    delete  payload.password;
-    //    database.collection("users").doc(uid).set(payload).then((res)=>{
-    //        database.collection("users").doc(uid)
-    //        .onSnapshot((doc) => {
-    //            dispatch( signupSuccess(doc.data()) );
-    //        });
-    //    })
-    // }).catch((err)=>{
-    //     dispatch(signUpFailure(err.message))
-    // })
   };
 
   const handleLogin = () => {
     dispatch(loginRequest());
-    // login(logInForm.email,logInForm.password)
-    // .then(res=>{
-    //     const { uid } = res.user
-    //     database.collection("users").doc(uid)
-    //     .onSnapshot((doc) => {
-    //         dispatch( loginSuccess(doc.data()) );
-    //     });
-    // })
-    // .catch((err)=>{
-    //     console.log("p",err);
-    //     setLoginErrorMessage(err.message)
-    //     dispatch(loginFailure(err))
-    // })
   };
 
   const handleCreateClick = () => {

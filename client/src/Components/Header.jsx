@@ -13,7 +13,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HelpIcon from "@material-ui/icons/Help";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -61,7 +60,7 @@ const StyledMenuItem = withStyles((theme) => ({
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   console.log("user in header:", user);
 
   const handleClick = (event) => {
@@ -110,11 +109,10 @@ const Header = () => {
         >
           <Avatar
             src={
-              "https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png" ||
               user.photoURL
             }
           />
-          <h5>{"Piyush Ranjan" || user.displayName}</h5>
+          <h5>{"Biswajit Das" || user.displayName}</h5>
         </div>
         <IconButton>
           <AppsIcon />

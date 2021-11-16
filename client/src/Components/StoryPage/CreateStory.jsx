@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useStateValue } from "../../Context/StateProvider";
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
@@ -7,34 +8,48 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ImageIcon from '@mui/icons-material/Image';
 import db from "../../firebase"
+import { storage } from "../../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import SortByAlphaIcon from '@mui/icons-material/SortByAlpha';
 import { Link } from 'react-router-dom';
 import styles from "../../StyleModules/StoryPage.module.css"
 
 const CreateStory = () => {
     const fileUpload = useRef(null);
-    const [statusImg, setStatusImg] = useState("false")
+    const [statusImg, setStatusImg] = useState("false");
+    const [{ user }] = useStateValue();
+    const [progress, setProgress] = useState(0);
     const handleClick = () => {
         document.getElementById("fileInput").click();
-        var img = document.getElementById("fileInput");
-        console.log(img)
     }
-    const handleChange = (e) => {
-        console.log("Hi")
-        console.log("file: ",e.target.files[0]);
-        var newImg = URL.createObjectURL(e.target.files[0])
-        setStatusImg(newImg)
+    const handleChange = async (e) => {
+        var newImg = e.target.files[0];
+        const storageRef = ref(storage, `/files/${newImg.name}`)
+        const uploadTask = uploadBytesResumable(storageRef, newImg);
+        uploadTask.on('state_changed',
+            (snapshot) => {
+                //progress function
+                const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                setProgress(prog);
+            },
+            (err) => {
+                console.log(err)
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then(url => setStatusImg(url))
+            })
     }
     const postPost = async () => {
-        db.collection("story").add({
+        db.collection("users").doc(`${user.uid}`).collection("stories").add({
             image: statusImg,
         })
+        setStatusImg("false");
     }
     return(
        <div className={styles.container}>
             {/* left div */}
             <div className={`${styles.leftDiv} ${styles.backToStatus}`} >
-               <Link to="/story"> <CancelRoundedIcon fontSize="large" color="success" /></Link>
+               <Link to="/stories"> <CancelRoundedIcon fontSize="large" color="success" /></Link>
                 <FacebookRoundedIcon fontSize="large" color="success" />
                 <div className={styles.leftHeading}>
                         <div>
@@ -45,7 +60,10 @@ const CreateStory = () => {
                         </div>
                 </div>
                 <div>
-                    <button onClick={postPost}>Share To story</button>
+                    <Link to="/stories">
+                        <button onClick={postPost}>Share To story</button>
+                    </Link>
+                    
                 </div>
             </div>
             {

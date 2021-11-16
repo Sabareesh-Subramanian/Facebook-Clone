@@ -58,7 +58,6 @@ function LoginForm({
         onClick={signIn}
         style={{ color: "white" }}
         disabled={isLoading}
-        //   onClick={handleLogin}
       >
         {!isLoading ? (
           "Log In"

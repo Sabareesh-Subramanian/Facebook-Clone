@@ -6,19 +6,29 @@ import {actionTypes} from "../Context/reducer"
 import { Link } from "react-router-dom";
 
 function Login() {
-    const [state, disPatch] = useStateValue();
+    const [state, dispatch] = useStateValue();
 
 
     const signIn = () => {
-        auth.signInWithPopup(provider)
-            .then(result => {
-                disPatch({
-                    type: actionTypes.SET_USER,
-                    user:result.user,
-                })
+        // auth.signInWithPopup(provider)
+        //     .then(result => {
+        //         console.log(result)
+        //         disPatch({
+        //             type: actionTypes.SET_USER,
+        //             user:result.user,
+        //         })
 
-                console.log(result.user);
-            }).catch(error => alert(error.message));
+        //         console.log(result.user);
+        //     }).catch(error => alert(error.message));
+        
+        auth.signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+            user: result.user,
+        });
+      })
+      .catch((error) => alert(error.message));
         
     }
     return (

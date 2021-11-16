@@ -10,7 +10,7 @@ import  AccountCircleIcon  from '@material-ui/icons/AccountCircle'
 
 function Post({profilePic,image,username,timestamp,message}) {
     return (
-        <div className="Post">
+        <div className="Post" style={{width:"60%"}}>
             <div className="post_top">
                 <Avatar src={profilePic}
                     className="post_avatar"
@@ -23,8 +23,6 @@ function Post({profilePic,image,username,timestamp,message}) {
             </div>
             <div className="post_bottom">
                 <p>{message}</p>
-                
-
             </div>
             <div className="post_image">
                 <img src={image} alt="" />

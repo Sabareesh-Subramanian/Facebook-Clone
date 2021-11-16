@@ -5,7 +5,7 @@ import { WaveLoading } from "react-loadingg";
 // import PopUp from '../../SharedComponents/PopUp';
 function ResetPassword({onClickCreate,toggleReset}) {
     const [resetLoading,setResetLoading] = useState(false)
-    const [error,setError] = useState("")
+    const [error] = useState("")
     const [resetState,setResetState]  =useState({email: "", confirmEmail : ""})
 
     const handleChange = (e)=>{
@@ -14,20 +14,6 @@ function ResetPassword({onClickCreate,toggleReset}) {
     }
     const handleResetPassword = () => {
         setResetLoading(true)
-        // if(resetState.email === resetState.confirmEmail){
-        //     resetPassword(resetState.email).then(()=>{
-        //         setError("Check your email to reset password.")
-        //         setResetLoading(false)
-        //        })
-        //        .catch((err)=>{
-        //         setError(err.message)
-        //         setResetLoading(false)
-        //        })
-        // } else {
-        //     setError("Email did not match!")
-        //     setResetLoading(false)
-        // }
-       
     }
     return (
 
