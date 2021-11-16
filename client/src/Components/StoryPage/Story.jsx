@@ -22,7 +22,6 @@ const StoryPage = () => {
     setActive(true);
   };
   const getStory = async () => {
-    console.log("USer%: ", user)
     db.collection("users").doc(`${user.uid}`).collection("stories").onSnapshot((snapshot) => {
             setData(snapshot.docs.map((doc) => doc.data()));
         });
@@ -37,7 +36,7 @@ const StoryPage = () => {
         <div>
           <div className={styles.leftHeading}>
             <div>
-              <h1>Stories</h1>
+              <h4>Stories</h4>
             </div>
             <div>
               <a href="#">Archieve</a>
@@ -48,27 +47,27 @@ const StoryPage = () => {
           <div className={styles.Color}>
             <div className={styles.Image}>
               <img
-                src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png"
+                src="https://cdn-icons-png.flaticon.com/512/4152/4152120.png"
                 alt=""
               />
             </div>
             <div>
-              <h3>Browse All</h3>
+              <h3>Browse all</h3>
             </div>
           </div>
-          <hr />
+          <hr style={{height:"3px",backgroundColor:"#4d4f52"}}/>
           <div className={styles.story}>
             <div>
-              <h1>Your Story</h1>
+              <h5>Your Story</h5>
             </div>
           </div>
           <Link to="/create" style={{ textDecoration: "none" }}>
             <div className={styles.addStory}>
               <div className={styles.Image}>
-                <AddCircleRoundedIcon fontSize="large" />
+                <AddCircleRoundedIcon fontSize="medium" sx={{fontSize:"30px"}}/>
               </div>
               <div>
-                <h4>Add to your story</h4>
+                <h3>Add to your story</h3>
               </div>
             </div>
           </Link>
@@ -100,7 +99,7 @@ const StoryPage = () => {
                   onClick={() =>
                     handleClick(
                       `${item.image}`,
-                      "https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png"
+                      `${item.profilePhoto}`
                     )
                   }
                 >
@@ -113,7 +112,7 @@ const StoryPage = () => {
                   />
                   <img
                     className={styles.image2}
-                    src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png"
+                    src={item.profilePhoto}
                     alt="status"
                   />
                 </div>

@@ -14,15 +14,25 @@
   margin: 0;
   padding: 0;
 }
+.CancelRoundedIcon {
+  margin-left: 2%;
+  font-size: 50px;
+}
+.FacebookRoundedIcon {
+  font-size: 50px;
+}
 .rightDiv {
   color: white;
   background-color: #18191a;
+  height: 100vw;
   margin: 0;
   padding: 0;
 }
 .leftHeading {
   display: flex;
   gap: 25%;
+  padding: 10px;
+  padding-left: 0;
   color: white;
 }
 .leftHeading > div:last-child {
@@ -34,12 +44,39 @@
 .leftHeading > div:first-child {
   margin-left: 15px;
 }
+.leftHeading > div:first-child > h3 {
+  font-size: 29px;
+  font-weight: bolder;
+}
+.leftHeading > div:first-child > h4 {
+  font-weight: 1000;
+  font-size: 25px;
+  margin-top: 35%;
+}
 .leftHeading > div > a {
   text-decoration: none;
   color: #2e89ff;
 }
+.CreateStoryHeading {
+  margin-top: 5%;
+}
+.CreateStoryImage {
+  display: flex;
+}
+.CreateStoryImage > div:last-child {
+  font-weight: bolder;
+  margin: 20px;
+}
+.CreateStoryImage > div:last-child > h6 {
+  font-weight: bolder;
+  margin: 5% 0 0 -2%;
+}
+.createStoryProfile {
+  border-radius: 50%;
+  height: 70px;
+}
 .setting {
-  margin: 5% 0 0 0 !important;
+  margin: 1% 0 0 0 !important;
   margin-left: 20% !important;
 }
 .Color,
@@ -65,11 +102,14 @@
   margin: 0;
 }
 .Color h3 {
-  margin-top: 15%;
+  margin-top: 20%;
+  font-size: 17px;
+  font-weight: bolder;
   padding: 0;
 }
 .Image > img {
-  height: 40px;
+  height: 50px;
+  padding: 10px;
 }
 .storiesContainer {
   padding: 10%;
@@ -111,6 +151,7 @@
   top: 10px;
   left: 10px;
   border-radius: 50%;
+  border: 5px solid #2e89ff;
   height: 40px;
   width: 40px;
 }
@@ -119,8 +160,22 @@
   margin-left: 2%;
   font-size: 10px;
 }
+.story > div > h5 {
+  font-weight: bolder;
+  margin-left: 2%;
+}
+.addStory h3 {
+  margin-top: 6%;
+  font-size: 17px;
+  font-weight: bolder;
+  padding: 0;
+}
+.profileStoryCreatePage {
+  margin-top: -8%;
+}
 .backToStatus {
   padding: 10px;
+  padding-top: 5%;
 }
 .cardContainer {
   display: flex;
@@ -154,11 +209,21 @@
 }
 .uploadFile {
   background-color: #242526;
-  width: 10%;
+  width: 20%;
   padding: 10px;
   border-radius: 50%;
   margin-top: 60%;
   margin-left: 40%;
+}
+.shareToStory {
+  padding: 10px;
+  margin: 10px;
+  margin-top: 100%;
+  width: 40%;
+  background-color: #2d87ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 .uploadtext {
   font-weight: bold;

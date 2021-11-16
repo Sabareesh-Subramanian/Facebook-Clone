@@ -19,6 +19,7 @@ const CreateStory = () => {
     const [statusImg, setStatusImg] = useState("false");
     const [{ user }] = useStateValue();
     const [progress, setProgress] = useState(0);
+    const [statusUpload, setStatusUpload] = useState(false);
     const handleClick = () => {
         document.getElementById("fileInput").click();
     }
@@ -38,37 +39,53 @@ const CreateStory = () => {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then(url => setStatusImg(url))
             })
+        setStatusUpload(true)
     }
     const postPost = async () => {
         db.collection("users").doc(`${user.uid}`).collection("stories").add({
             image: statusImg,
+            profilePhoto: user.photoURL
         })
+        console.log("User90: ", user)
         setStatusImg("false");
+        setStatusUpload(false)
     }
     return(
        <div className={styles.container}>
             {/* left div */}
             <div className={`${styles.leftDiv} ${styles.backToStatus}`} >
-               <Link to="/stories"> <CancelRoundedIcon fontSize="large" color="success" /></Link>
-                <FacebookRoundedIcon fontSize="large" color="success" />
-                <div className={styles.leftHeading}>
+               <Link to="/stories"> <CancelRoundedIcon fontSize="large" color="success" className={styles.CancelRoundedIcon} /></Link>
+                <FacebookRoundedIcon fontSize="large" color="success" className={styles.FacebookRoundedIcon}/>
+                <div className={`${styles.leftHeading} ${styles.CreateStoryHeading}`}>
                         <div>
-                            <h2>Your Stories</h2>
+                            <h3>Your story</h3>
                         </div>
                         <div className={styles.setting}>
                             <SettingsIcon/>
                         </div>
                 </div>
-                <div>
+                <div className={`${styles.leftHeading} ${styles.profileStoryCreatePage}`}>
+                        <div className={styles.CreateStoryImage}>
+                            <div>
+                                <img src={user.photoURL} alt="profile" className={styles.createStoryProfile} />
+                            </div>
+                            <div>
+                                <h6>{user.displayName}</h6>
+                            </div>
+                        </div>
+                </div>
+                {statusUpload&&<div>
+                    <Link to="/create">
+                        <button onClick={postPost} className={styles.shareToStory}>Discard</button>
+                    </Link>
                     <Link to="/stories">
-                        <button onClick={postPost}>Share To story</button>
+                        <button onClick={postPost} className={styles.shareToStory}>Share To story</button>
                     </Link>
                     
-                </div>
+                </div>}
             </div>
             {
-                // console.log("Img: ", statusImg)
-                statusImg=="false" ?
+                statusImg ==="false" ?
             <div className={styles.rightDiv}>
                 <input type="file" style={{ display: "none" }} id="fileInput" ref={fileUpload} onChange={handleChange}/>
                 <div className={styles.cardContainer}>
@@ -93,7 +110,7 @@ const CreateStory = () => {
                     :
                     
                     <div>
-                        <img src={statusImg} alt="" style={{ height: "80%", width: "100%" }} />
+                        <img src={statusImg} alt="" style={{ height: "50vw", width: "70vw", padding:"40px" }} />
                         <div>
 
                         </div>

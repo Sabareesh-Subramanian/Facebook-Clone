@@ -5,15 +5,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10000;
-  /* background: rgba(0, 0, 0, 0.95); */
   backdrop-filter: blur(5px);
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* visibility: hidden;
-  opacity: 0; */
 }
 .parent {
   position: relative;
@@ -28,20 +25,23 @@
   left: 0;
   height: 50vw;
   width: 40vw;
+  border-radius: 10px;
 }
 .image2 > img {
   position: absolute;
   top: 10px;
   left: 10px;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  border: 5px solid #2e89ff;
+  height: 50px;
+  width: 50px;
 }
 .image2 > h3 {
   position: absolute;
-  top: 5px;
-  left: 10%;
-  color: white;
+  top: 2%;
+  left: 12%;
+  color: rgb(251, 251, 251);
+  font-weight: bolder;
 }
 .story {
   position: relative;
@@ -51,16 +51,15 @@
 .close {
   position: absolute;
   top: 30px;
-  /* right: 30px; */
   left: 20px;
+  color: white;
   cursor: pointer;
-  /* filter: invert(1); */
-  max-width: 32px;
 }
 .logo {
   position: absolute;
   top: 30px;
   /* right: 30px; */
+  color: #d46220;
   left: 70px;
   cursor: pointer;
   filter: invert(1);
