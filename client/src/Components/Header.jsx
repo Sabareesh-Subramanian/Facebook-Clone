@@ -24,6 +24,7 @@ import { Avatar, IconButton } from "@material-ui/core";
 import { useState } from "react";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import grey from "@material-ui/core/colors/grey";
+import { Link } from "react-router-dom";
 
 const pri = grey[100];
 const StyledMenu = withStyles({
@@ -99,21 +100,17 @@ const Header = () => {
         <div className="header__option">
           <SportsEsportsIcon fontSize="large" />
         </div>
-      </div>
+      </div> 
       <div className="header__right">
-        <div
-          onClick={() => {
-            window.location.href = "/profile";
-          }}
+          <Link to="/profile"><div
+          
           className="header__info"
         >
           <Avatar
-            src={
-              user.photoURL
-            }
+            src={user.photoURL}
           />
-          <h5>{"Biswajit Das" || user.displayName}</h5>
-        </div>
+          <h5>{user.displayName}</h5>
+        </div></Link>
         <IconButton>
           <AppsIcon />
         </IconButton>

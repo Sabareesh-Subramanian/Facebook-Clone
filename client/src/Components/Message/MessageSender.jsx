@@ -28,7 +28,7 @@ function MessageSender() {
    }
 
     return (
-        <div className="messageSender" style={{ width:"60%", marginTop:"-280px"}}>
+        <div className="messageSender" >
             <div className="messageSender_top">
                 <Avatar src={user.photoURL} />
                 <form >

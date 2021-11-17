@@ -7,6 +7,8 @@ import edit from "../../Icons/edit.svg";
 import more from "../../Icons/more.svg";
 import addphoto from "../../Icons/addphoto.svg";
 import plus from "../../Icons/plus.svg";
+import { Link } from "react-router-dom";
+import { useStateValue } from "../../Context/StateProvider";
 
 const CoverPhotoButton = styled.button`
   z-index: 10;
@@ -33,6 +35,7 @@ const MoreBox = styled.div`
   }
 `;
 export const PhotoAndDetails = () => {
+   const [{ user }] = useStateValue();
   const [showMore, setShowMore] = useState(false);
   return (
     <>
@@ -49,7 +52,7 @@ export const PhotoAndDetails = () => {
         <img
           className="img-fluid offset-2 col-8 rounded"
           style={{ height: "350px", objectFit: "cover", zIndex: "0" }}
-          src="https://media-exp1.licdn.com/dms/image/C5616AQGqVbWQ_cYZ1g/profile-displaybackgroundimage-shrink_350_1400/0/1624588252195?e=1642032000&v=beta&t=2EG0lkbZmd0CFrmHtHlBdPZJU_Kj6AGDyg78YFeaVa0"
+        src={user.photoURL}
           alt="CoverPic"
         />
 
@@ -65,12 +68,12 @@ export const PhotoAndDetails = () => {
             <img
               style={{ height: "200px", objectFit: "cover" }}
               className="rounded-circle "
-              src="https://github.com/biswajitdas-007/biswajitdas-007/blob/main/DSC_0121-modified-min%20(1).png?raw=true"
+              src={user.photoURL}
               alt="ProfilePic"
             />
           </div>
           <div className="col-6 ps-2">
-            <div className="h4 text-light mt-4">Biswajit Das</div>
+            <div className="h4 text-light mt-4">{user.displayName}</div>
             <p>1.1K Friends</p>
             <div className="d-flex justify-content-between">
               <AvatarGroup max={5}>
@@ -92,16 +95,16 @@ export const PhotoAndDetails = () => {
                 <Avatar alt="Trevor Henderson" src={avatar} />
               </AvatarGroup>
               <div>
-                <button
-                  onClick={() => {
-                    window.location.href = "/stories";
-                  }}
+                <Link to="/stories"><button
+                  
                   type="button"
                   class=" btn btn-sm btn-primary"
                 >
-                  {/* <img src={plus} alt="PlusSign" /> */}
-                  <span> View Stories</span>
+                  
+                
+                <span> View Stories</span>
                 </button>
+                </Link>
                 <button type="button" class="ms-2 btn btn-sm btn-secondary">
                   <img src={edit} alt="PlusSign" />
                   <span> Edit Profile</span>

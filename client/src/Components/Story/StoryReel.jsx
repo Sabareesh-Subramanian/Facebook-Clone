@@ -12,7 +12,7 @@ function StoryReel() {
     }
     return (
         <Link to="/stories">
-        <div className="storyReel" onClick={handleClick} style={{marginTop:"-500px"}}>
+        <div className="storyReel" onClick={handleClick} >
             <Story
                 image="https://media.newstrack.in/uploads/entertainment-news/hollywood-news/Dec/25/big_thumb/ghh1_5e0330bc40062.jpg"
                 profileSrc="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png"

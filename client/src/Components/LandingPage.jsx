@@ -10,7 +10,7 @@ function LandingPage() {
   return (
     <Link to="/" style={{ textDecoration: "none", color: "black" , backgroundColor:"white"}}>
       <Header />
-      <div className="app_body" style={{backgroundColor:"white"}}>
+      <div className="app_body" style={{ backgroundColor:"#282c34", display:"flex",color:"white" }}>
         <Sidebar />
         <Feed />
         <Widgets />
