@@ -27,7 +27,7 @@
   padding: 8px 8px 8px 8px;
   margin: 50px 10px;
   border-radius: 10px;
-  box-shadow: 0px 1px 5px 2px  rgba(224, 224, 224, 0.7);
+  box-shadow: 0px 1px 5px 2px rgba(224, 224, 224, 0.7);
   display: flex;
   flex-direction: column;
 }
@@ -36,20 +36,20 @@
   padding: 20px 15px;
   border-radius: 8px;
   border: 1px solid #e4e6eb;
-  background-color:  #edeff1;
+  background-color: #edeff1;
 }
 .loginFormMainDiv > input:focus {
   border: 1px solid rgb(0, 140, 255);
   border-radius: 8px;
 }
 .loginFormMainDiv > button {
-  background-color:  #1877f2;
+  background-color: #1877f2;
   color: var(--white);
   margin: 8px 5px;
   padding: 3%;
   font-weight: 600;
   font-size: 19px;
-  border: 1px solid  #1877f2;
+  border: 1px solid #1877f2;
   border-radius: 8px;
   cursor: pointer;
   height: 45px;
@@ -59,7 +59,7 @@
   border: 1px solid #146fe7;
 }
 .loginFormMainDiv > button:nth-last-child(1):hover {
-  background-color:#32af19;
+  background-color: #32af19;
 }
 .loginFormMainDiv > button:nth-last-child(1) {
   background-color: #42b72a;
@@ -81,15 +81,15 @@
 .loginFormMainDiv > a:hover {
   text-decoration: underline;
 }
-.loginFormMainDiv>input::placeholder{
-  color:lightslategray
+.loginFormMainDiv > input::placeholder {
+  color: lightslategray;
 }
-.forpass{
+.forpass {
   color: #1877f2;
-    font-size: 14px;
-    font-weight: 500;
+  font-size: 14px;
+  font-weight: 500;
 }
-.forpass:hover{
+.forpass:hover {
   text-decoration: underline;
 }
 .hrLoginForm {
@@ -103,7 +103,7 @@
   font-weight: 100;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color:  #fff;
+  background-color: #fff;
   padding: 5px;
 }
 .LoginPageFooter > p {
@@ -152,7 +152,7 @@
   border-radius: 50%;
   height: 26px;
 }
-.nameSignUpContainer{
+.nameSignUpContainer {
   margin-left: 15px;
 }
 .signUpContainer > .nameSignUpContainer > input {
@@ -160,12 +160,12 @@
   padding: 10px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color:#f5f6f7;
+  background-color: #f5f6f7;
   margin: 2px;
 }
 .signUpContainer > .nameSignUpContainer > input::placeholder {
   font-size: 14px;
-  color:lightslategray
+  color: lightslategray;
 }
 .signUpContainer > .numPassInput {
   width: 90%;
@@ -174,16 +174,16 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #f5f6f7;
   margin-left: 15px;
-  margin-top:5px
+  margin-top: 5px;
 }
-.signUpContainer > .numPassInput::placeholder{
+.signUpContainer > .numPassInput::placeholder {
   font-size: 14px;
-  color:lightslategray
+  color: lightslategray;
 }
 .signUpContainer > .signUpbuttonClose > svg {
-  stroke:  #b0b3b8;
+  stroke: #b0b3b8;
 }
-.dobSignUpContainer{
+.dobSignUpContainer {
   margin-left: 15px;
 }
 .signUpContainer > .dobSignUpContainer > select {
@@ -193,7 +193,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #f5f6f7;
   margin: 2px;
-  margin-right:10px
+  margin-right: 10px;
 }
 .signUpContainer > .dobSignUpContainer > p {
   font-size: 14px;
@@ -263,7 +263,7 @@
   font-size: 11px;
   font-weight: 200;
   text-align: left;
-  color:#050505;
+  color: #050505;
   margin: 6px 30px;
 }
 .errorHandlingContainerSignUp {
@@ -297,3 +297,47 @@
   font-size: 13px;
   color: rgb(235, 83, 63);
 }
+
+.google-btn {
+  width: 213px;
+  margin-left: 19%;
+  height: 42px;
+  background-color: #4285f4;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.google-btn:hover {
+  cursor: pointer;
+}
+.google-icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: white;
+}
+.google-icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+.btn-text {
+  float: right;
+  margin: 11px 11px 0 0;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+}
+.btn-text:hover {
+  box-shadow: 0 0 6px #4285f4;
+}
+.btn-text:active {
+  background: #1669f2;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
