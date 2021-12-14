@@ -12,13 +12,11 @@ function Login() {
     const signIn = () => {
         // auth.signInWithPopup(provider)
         //     .then(result => {
-        //         console.log(result)
         //         disPatch({
         //             type: actionTypes.SET_USER,
         //             user:result.user,
         //         })
 
-        //         console.log(result.user);
         //     }).catch(error => alert(error.message));
         
         auth.signInWithPopup(provider)

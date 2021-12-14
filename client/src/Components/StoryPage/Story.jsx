@@ -5,6 +5,7 @@ import { useStateValue } from "../../Context/StateProvider";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import ShowStory from "./ShowStory";
 import styles from "../../StyleModules/StoryPage.module.css";
+import { Header } from "../Header";
 
 const StoryPage = () => {
   const [active, setActive] = useState(false);
@@ -30,6 +31,7 @@ const StoryPage = () => {
     getStory();
   }, []);
   return (
+    <> <Header/>
     <div className={styles.container}>
       {/* left div */}
       <div className={styles.leftDiv} id="left-div-1">
@@ -89,9 +91,7 @@ const StoryPage = () => {
             </div>
           </div>
           <div className={styles.storyContainer}>
-            {console.log("Data3: ", data)}
             {data.map((item,index) => {
-              console.log("item8: ", item)
               return (
                 <div
                   key={index}
@@ -128,7 +128,8 @@ const StoryPage = () => {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { WaveLoading } from "react-loadingg";
 import "../styles/Login/LoginPage.css";
+import db from "../../firebase";
 import { auth, provider } from "../../firebase";
 import { useStateValue } from "../../Context/StateProvider";
 import { actionTypes } from "../../Context/reducer";
@@ -18,21 +19,33 @@ function LoginForm({
   handleResetPassword,
 }) {
   const [state, disPatch] = useStateValue();
-
+  const [loginData, setLoginData] = useState([]);
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
+        const initState = {
+          email: result.user.email,
+          password: result.user.password,
+          first_name: result.user.displayName,
+          last_name: "",
+          photoURL: result.user.photoURL,
+          gender: result.user.gender,
+          uid: result.user.uid,
+        }
         disPatch({
           type: actionTypes.SET_USER,
-          user: result.user,
+          user: initState,
         });
-
-        console.log(result.user);
         // window.location.href = "/home";
       })
       .catch((error) => alert(error.message));
   };
+  useEffect(() => {
+    db.collection("user_data").onSnapshot((snapshot) => {
+      setLoginData(snapshot.docs.map((doc) => doc.data()));
+        });
+  },[])
   return (
     <div className="loginFormMainDiv">
       <input
@@ -55,7 +68,7 @@ function LoginForm({
         </div>
       )}
       <button
-        onClick={signIn}
+        onClick={handleLogin}
         style={{ color: "white" }}
         disabled={isLoading}
       >

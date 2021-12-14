@@ -22,7 +22,7 @@ const loginFailure = (payload)=>{
 const signupRequest = (payload)=>{
     return {
         type: SIGNUP_REQUEST,
-        payload
+        payload: payload
     }
 }
 const signUpFailure = (payload)=>{

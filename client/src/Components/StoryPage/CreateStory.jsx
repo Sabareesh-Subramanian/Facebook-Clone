@@ -44,9 +44,8 @@ const CreateStory = () => {
     const postPost = async () => {
         db.collection("users").doc(`${user.uid}`).collection("stories").add({
             image: statusImg,
-            profilePhoto: user.photoURL
+            profilePhoto: user.photoURL,
         })
-        console.log("User90: ", user)
         setStatusImg("false");
         setStatusUpload(false)
     }

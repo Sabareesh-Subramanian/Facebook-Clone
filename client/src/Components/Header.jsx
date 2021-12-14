@@ -62,8 +62,6 @@ const StyledMenuItem = withStyles((theme) => ({
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [{ user }] = useStateValue();
-  console.log("user in header:", user);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -84,8 +82,8 @@ const Header = () => {
         </div>
       </div>
       <div className="header__middle">
-        <div className="header__option header__option--active">
-          <HomeIcon fontSize="large" />
+        <div className="header__option">
+         <Link to="/"><HomeIcon fontSize="large" /></Link> 
         </div>
 
         <div className="header__option">

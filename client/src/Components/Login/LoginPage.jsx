@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import "../../App.css";
 import "../styles/Login/LoginPage.css";
+import db from "../../firebase";
 import LoginLogo from "./LoginLogo";
 import LoginForm from "./LoginForm";
 import { ReactComponent as CloseIcon } from "../../Icons/close.svg";
 import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuid } from "uuid";
+import { useStateValue } from "../../Context/StateProvider";
+import { actionTypes } from "../../Context/reducer";
 import {
   loginRequest,
   signupRequest,
@@ -24,9 +28,11 @@ const initFormLogin = {
   password: "",
 };
 function LoginPage() {
+  const [state, disPatch] = useStateValue();
   const [isCreateClick, setIsCreateClick] = useState(false);
   const [signUpForm, setSignUpForm] = useState(initFormSignup);
   const [logInForm, setLogInForm] = useState(initFormLogin);
+  const [loginData, setLoginData] = useState([]);
   const [loginErrorMessage] = useState("");
   const { first_name, last_name, email, password } = signUpForm;
   const [dob,setDob] = useState("1, June, 1950");
@@ -38,10 +44,8 @@ function LoginPage() {
     (store) => store.auth
   );
   const handleSignUpForm = (e) => {
-    //console.log(e.target.value)
     const { value, name } = e.target;
     setSignUpForm({ ...signUpForm, [name]: value });
-    //console.log(signUpForm)
   };
 
   const handleLoginForm = (e) => {
@@ -57,22 +61,47 @@ function LoginPage() {
     } else if (e.target.name === "date_of_birth:year") {
       setYear(e.target.value);
     }
-
-    //console.log(dob)
   };
 
+  useEffect(() => {
+    db.collection("user_data").onSnapshot((snapshot) => {
+      setLoginData(snapshot.docs.map((doc) => doc.data()));
+        });
+  },[])
   useEffect(() => {
     setDob(day + ", " + mon + ", " + year);
   }, [day, mon, year]);
 
-  const dispatch = useDispatch();
-
   const handleSingUp = () => {
-    dispatch(signupRequest());
+    db.collection("user_data").add({
+      email: signUpForm.email,
+      password: signUpForm.password,
+      first_name: signUpForm.first_name,
+      last_name: signUpForm.last_name,
+      gender: signUpForm.gender,
+      uid: uuid(),
+    })
+    setIsCreateClick(false);
   };
 
   const handleLogin = () => {
-    dispatch(loginRequest());
+    let isTrue = false;
+    let data = [];
+    for (var i = 0; i < loginData.length; i++){
+      if (loginData[i].email === logInForm.email && loginData[i].password === logInForm.password) {
+        isTrue = true;
+        data.push(loginData[i]);
+        break;
+      }
+    }
+    if (isTrue) {
+      disPatch({
+          type: actionTypes.SET_USER,
+          user: data[0],
+        });
+    } else {
+      alert('Wrong Credentials')
+    }
   };
 
   const handleCreateClick = () => {
@@ -124,6 +153,7 @@ function LoginPage() {
         </div>
         <div className="LoginPageFooter">
           <p>English (UK)</p>
+          <p>This site is for educational purposes</p>
           <p>Facebook © 2021</p>
         </div>
       </div>

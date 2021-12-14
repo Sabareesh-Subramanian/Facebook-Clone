@@ -1,5 +1,5 @@
 import { Avatar } from '@material-ui/core'
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import "../styles/MessageSender.css"
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
@@ -19,20 +19,19 @@ function MessageSender() {
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             ProfilePic: user.photoURL,
-            username:user.displayName,
+            username:user.first_name,
             image:imageUrl
         })
 
         setInput("");
         setImageUrl("");
    }
-
     return (
         <div className="messageSender" >
             <div className="messageSender_top">
                 <Avatar src={user.photoURL} />
                 <form >
-                    <input value={input} onChange={(e) => setInput(e.target.value)} className="messageSender_input" placeholder={`what's on your mind , ${user.displayName}` }/>
+                    <input value={input} onChange={(e) => setInput(e.target.value)} className="messageSender_input" placeholder={`what's on your mind , ${user.first_name}` }/>
                     <input value={imageUrl} onChange={(e)=>setImageUrl(e.target.value)} placeholder="Image URL (optional)" />
                     <button type="submit" onClick={handleSubmit}>Hidden Submit</button>
                 </form>
