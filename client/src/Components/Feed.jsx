@@ -18,7 +18,7 @@ function Feed() {
     }, []);
 
     return (
-        <div className="feed" style={{marginTop:"20px"}}>
+        <div className="feed">
             <StoryReel />
             <MessageSender />
             {posts.map((post) => (

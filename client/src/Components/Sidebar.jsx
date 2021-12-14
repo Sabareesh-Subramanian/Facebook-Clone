@@ -13,18 +13,14 @@ import { useStateValue } from "../Context/StateProvider";
 function Sidebar() {
     const [{ user }] = useStateValue();
     return <div className="sidebar">
-        
-        <SidebarRow src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png" title={user.displayName}/>
+        <SidebarRow src="https://user-images.githubusercontent.com/78302050/136450736-0bc9f56c-450b-4623-8ebe-cc0f7735d888.png" title={`${user.first_name} ${user.last_name}`}/>
         <SidebarRow Icon={LocalHospitalIcon} title="Covid-19 Information Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
         <SidebarRow Icon={PeopleIcon} title="Friends" />
         <SidebarRow Icon={ChatIcon} title="Messenger" />
         <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
         <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
-         <SidebarRow Icon={ExpandMoreOutlined} title="More" />
-
-
-
+        <SidebarRow Icon={ExpandMoreOutlined} title="More" />
     </div>
 }
 export default Sidebar

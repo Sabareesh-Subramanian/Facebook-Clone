@@ -13,13 +13,22 @@
   display: flex;
   position: relative;
   align-items: center;
-  padding: 15px;
+  margin: 0;
+  padding: 0 15px;
+}
+hr {
+  height: 100%;
+  margin: 0;
 }
 .post_avatar {
   margin-right: 10px;
 }
 .post_topinfo {
-  font-size: medium;
+  padding: 0;
+  margin: 0;
+}
+.post_topinfo > h5 {
+  margin-top: 9%;
 }
 .post_topinfo > p {
   font-size: small;

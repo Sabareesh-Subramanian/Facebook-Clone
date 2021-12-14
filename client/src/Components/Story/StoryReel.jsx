@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import StoryPage from '../StoryPage/Story';
 import "../styles/StoryReel.css"
 import Story from "./Story";
 

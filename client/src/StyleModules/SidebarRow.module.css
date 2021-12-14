@@ -5,11 +5,19 @@
   color: white;
   cursor: pointer;
 }
+.sidebarRow > div {
+  display: flex;
+}
+.title {
+  margin: 1% 0 0 0;
+  padding: 3px;
+  margin-left: 1rem;
+}
 .sidebarRow > h4 {
   margin-left: 20px;
   font-weight: 600;
 }
-.sidebarRow > div > div > .MuiSvgIcon-root {
+.Icon {
   font-size: xx-large;
   color: #2e81f4;
 }

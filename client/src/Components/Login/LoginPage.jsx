@@ -22,6 +22,7 @@ const initFormSignup = {
   email: "",
   password: "",
   gender: "",
+  photoURL:"",
 };
 const initFormLogin = {
   email: "",
@@ -34,7 +35,7 @@ function LoginPage() {
   const [logInForm, setLogInForm] = useState(initFormLogin);
   const [loginData, setLoginData] = useState([]);
   const [loginErrorMessage] = useState("");
-  const { first_name, last_name, email, password } = signUpForm;
+  const { first_name, last_name, email, password , photoURL} = signUpForm;
   const [dob,setDob] = useState("1, June, 1950");
   const [day, setDay] = useState("1");
   const [mon, setMon] = useState("June");
@@ -79,6 +80,7 @@ function LoginPage() {
       first_name: signUpForm.first_name,
       last_name: signUpForm.last_name,
       gender: signUpForm.gender,
+      photoURL: signUpForm.photoURL,
       uid: uuid(),
     })
     setIsCreateClick(false);
@@ -191,6 +193,14 @@ function LoginPage() {
               value={email}
               placeholder="Email address"
               name="email"
+              onChange={handleSignUpForm}
+            />
+            <input
+              className="numPassInput"
+              type="url"
+              value={photoURL}
+              placeholder="Image Url"
+              name="photoURL"
               onChange={handleSignUpForm}
             />
             <input

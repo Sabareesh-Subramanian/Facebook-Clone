@@ -21,7 +21,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { useStateValue } from "../Context/StateProvider";
 import "../StyleModules/Header.css";
 import { Avatar, IconButton } from "@material-ui/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import grey from "@material-ui/core/colors/grey";
 import { Link } from "react-router-dom";
@@ -69,6 +69,9 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  useEffect(() => {
+    console.log("user: ", user)
+  },[])
   return (
     <div className="header">
       <div className="header__left">
@@ -77,8 +80,8 @@ const Header = () => {
           alt=""
         />
         <div className="header__search">
-          <SearchIcon />
-          <input type="text " placeholder="Facebook में खोजे" />
+          <SearchIcon color="primary" />
+          <input type="text " placeholder="Search Facebook" />
         </div>
       </div>
       <div className="header__middle">
@@ -139,28 +142,19 @@ const Header = () => {
           onClose={handleClose}
         >
           <StyledMenuItem>
-            <IconButton
-              style={{
-                backgroundColor: "none",
-                color: "black",
-                marginRight: "20px",
-              }}
-            >
-              {" "}
+            <IconButton>
               <Avatar
-                style={{ width: "50px", height: "50px" }}
-                src="https://media-exp1.licdn.com/dms/image/C5603AQGgtVhNNVr5yg/profile-displayphoto-shrink_100_100/0/1633080376415?e=1639612800&v=beta&t=Z2d7kNBuRgUlA8oJxosGfSbdAowunMWrDnt3Sq5Lavg"
+                src={user.photoURL} className="headerProfilePhoto"
               />
             </IconButton>
             <ListItemText>
-              {" "}
-              <div>
-                <h5> Niket Sandilya</h5>
-
-                <p>अपनी प्रोफ़ाइल देखें</p>
+              <div className="headerProfileDiv">
+                <h5>{user.first_name} {user.last_name}</h5>
+                <p>See your profile</p>
               </div>
             </ListItemText>
           </StyledMenuItem>
+          <hr />
           <StyledMenuItem>
             <IconButton
               style={{
@@ -172,14 +166,14 @@ const Header = () => {
               <FeedbackIcon fontSize="small" />
             </IconButton>
             <ListItemText>
-              {" "}
-              <div>
-                <p> फ़ीडबैक दें</p>
-
-                <p>नए Facebook को बेहतर बनाने में हमारी मदद करें.</p>
+              <div className="headerFeedbackDiv">
+                <p>Give feedback</p>
+                <p>Help us improve the new Facebook</p>
               </div>
             </ListItemText>
+           
           </StyledMenuItem>
+          <hr />
           <StyledMenuItem>
             <IconButton
               style={{
@@ -193,7 +187,7 @@ const Header = () => {
             <ListItemText>
               {" "}
               <div>
-                <p> सेटिंग और प्राइवेसी</p>
+                <p>Settings & privacy</p>
               </div>
             </ListItemText>
           </StyledMenuItem>
@@ -210,7 +204,7 @@ const Header = () => {
             <ListItemText>
               {" "}
               <div>
-                <p> मदद और सपोर्ट</p>
+                <p>Help & support</p>
               </div>
             </ListItemText>
           </StyledMenuItem>
@@ -227,7 +221,7 @@ const Header = () => {
             <ListItemText>
               {" "}
               <div>
-                <p> डिस्प्ले और एक्सेसिबिलिटी</p>
+                <p>Display & accessibility</p>
               </div>
             </ListItemText>
           </StyledMenuItem>
@@ -244,7 +238,7 @@ const Header = () => {
             <ListItemText>
               {" "}
               <div>
-                <p>लॉग आउट करें</p>
+                <p>Log Out</p>
               </div>
             </ListItemText>
           </StyledMenuItem>
