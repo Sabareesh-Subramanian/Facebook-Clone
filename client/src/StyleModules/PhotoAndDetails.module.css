@@ -1,0 +1,17 @@
+.ProfilePicture {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+#profilePicContainer {
+  margin-top: -3%;
+  height: 230px;
+  border: 5px solid rgb(34, 33, 33);
+}
+.userName {
+  margin-top: 10px;
+  font-size: 40px;
+}
+#profileHeaderContainer {
+  margin-bottom: 20px;
+}

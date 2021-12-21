@@ -7,8 +7,7 @@ export const PostsFriendsPhotos = () => {
       <div
         style={{
           background: "#18191A",
-          //   height: "300vh",
-          //   overflow: "scroll",
+            height: "100%",
         }}
         className="row"
       >

@@ -69,9 +69,6 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  useEffect(() => {
-    console.log("user: ", user)
-  },[])
   return (
     <div className="header">
       <div className="header__left">

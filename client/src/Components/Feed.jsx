@@ -10,7 +10,6 @@ function Feed() {
     
     const [posts, setPosts] = useState([]);
     const [{ user }] = useStateValue();
-
     useEffect(() => {
         db.collection("users").doc(`${user.uid}`).collection("messages").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
             setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))

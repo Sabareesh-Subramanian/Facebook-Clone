@@ -25,7 +25,7 @@ export const UserProfile = () => {
       {/* Photo and Info End */}
       {/* Intro, Friends, Posts, Photos Div Start */}
       <PostsFriendsPhotos />
-      {/* Intro, Friends, Posts, Photos Div End */}
+        {/* Intro, Friends, Posts, Photos Div End */}
     </>
   );
 };

@@ -9,11 +9,11 @@ import addphoto from "../../Icons/addphoto.svg";
 import plus from "../../Icons/plus.svg";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../Context/StateProvider";
-
+import styles from "../../StyleModules/PhotoAndDetails.module.css"
 const CoverPhotoButton = styled.button`
   z-index: 10;
   position: absolute;
-  margin-top: 25%;
+  margin-top: 20%;
   margin-left: 70%;
   /* margin-right: 100px; */
 `;
@@ -45,7 +45,7 @@ export const PhotoAndDetails = () => {
         <span>Edit Cover Photo</span>
       </CoverPhotoButton>
       <div
-        style={{ background: "#242526", color: "white" }}
+        style={{ background: "#242526", color: "white", height:"100%" }}
         className="col-12 p-3"
       >
         {/* Cover Photo */}
@@ -55,27 +55,22 @@ export const PhotoAndDetails = () => {
         src={user.photoURL}
           alt="CoverPic"
         />
-
         {/* Profile Photo and Info */}
         <div className="col-12 d-flex">
           <div
             className="rounded-circle col-2 offset-2"
-            style={{
-              marginTop: "-5%",
-              border: "5px solid #242526",
-            }}
+            id={styles.profilePicContainer}
           >
             <img
-              style={{ height: "200px", objectFit: "cover" }}
-              className="rounded-circle "
+              className={styles.ProfilePicture}
               src={user.photoURL}
               alt="ProfilePic"
             />
           </div>
           <div className="col-6 ps-2">
-            <div className="h4 text-light mt-4">{user.displayName}</div>
+            <div className={styles.userName}>{user.first_name}</div>
             <p>1.1K Friends</p>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between" id={styles.profileHeaderContainer}>
               <AvatarGroup max={5}>
                 <Avatar alt="Remy Sharp" src={avatar} />
                 <Avatar
